@@ -1,0 +1,9 @@
+Network.access = Zero
+Host.connect = Zero
+Host.authenticate = Zero
+Host.guessPassword = Zero
+Host.guessedPassword = Exponential(0.020000)
+Host.access = Zero
+User.attemptPhishing = Zero
+User.phish = Exponential(0.100000)
+Password.obtain = Zero

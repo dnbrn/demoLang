@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.dnbrn.demoLang.test.TestError" time="0.079" tests="2" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/test-classes:/Users/danielbraun/mal/dnbrn/demoLang/target/classes:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/danielbraun/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/danielbraun/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/danielbraun/.m2/repository/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:/Users/danielbraun/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/danielbraun/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/danielbraun/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/danielbraun/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/danielbraun/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/danielbraun/.m2/repository/net/bytebuddy/byte-buddy/1.12.20/byte-buddy-1.12.20.jar:/Users/danielbraun/.m2/repository/org/javassist/javassist/3.29.2-GA/javassist-3.29.2-GA.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="SE"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter6995640446372054858.jar /Users/danielbraun/mal/dnbrn/demoLang/target/surefire 2025-05-27T15-23-55_237-jvmRun1 surefire14577042955861292884tmp surefire_07252736904953859491tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/test-classes:/Users/danielbraun/mal/dnbrn/demoLang/target/classes:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/danielbraun/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/danielbraun/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/danielbraun/.m2/repository/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:/Users/danielbraun/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/danielbraun/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/danielbraun/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/danielbraun/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/danielbraun/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/danielbraun/.m2/repository/net/bytebuddy/byte-buddy/1.12.20/byte-buddy-1.12.20.jar:/Users/danielbraun/.m2/repository/org/javassist/javassist/3.29.2-GA/javassist-3.29.2-GA.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/danielbraun"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-01-21"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/danielbraun/mal/dnbrn/demoLang"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter6995640446372054858.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.26+4"/>
+    <property name="user.name" value="danielbraun"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.5"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-11.0.26+4"/>
+    <property name="localRepository" value="/Users/danielbraun/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/x3/ns6mq0r55cn8mf2cszq8m2xc0000gn/T/"/>
+    <property name="java.version" value="11.0.26"/>
+    <property name="user.dir" value="/Users/danielbraun/mal/dnbrn/demoLang"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.library.path" value="/Users/danielbraun/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="11.0.26+4"/>
+    <property name="java.specification.maintenance.version" value="3"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="testGuessPassword2" classname="org.dnbrn.demoLang.test.TestError" time="0.054">
+    <system-out><![CDATA[Building LanguageModel...
+Building LanguageModel...
+❌️Test crashed.
+
+]]></system-out>
+    <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="testGuessPassword" classname="org.dnbrn.demoLang.test.TestError" time="0.009">
+    <system-out><![CDATA[+ server.access was reached in 50.0 days, as expected.
+]]></system-out>
+  </testcase>
+</testsuite>
