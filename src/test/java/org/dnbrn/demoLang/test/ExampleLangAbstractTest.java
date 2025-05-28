@@ -38,8 +38,8 @@ public class ExampleLangAbstractTest {
         new Attacker().reset();
     }
 
-    @AfterAll
-    public static void clearEncryptionDefaults() {
+    @AfterEach
+    public void clearEncryptionDefaults() {
         // This is just a fallback if the extending class doesn't override it
     }
 

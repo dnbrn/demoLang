@@ -4,6 +4,8 @@ import core.Asset;
 import core.AttackStep;
 import core.AttackStepMax;
 import core.AttackStepMin;
+import core.Defense;
+import java.lang.Boolean;
 import java.lang.Override;
 import java.lang.String;
 import java.util.HashSet;
@@ -20,9 +22,35 @@ public class Host extends Asset {
 
   public Access access;
 
+  public Firewall firewall;
+
   public Set<Network> networks = new HashSet<>();
 
   public Set<Password> passwords = new HashSet<>();
+
+  public Set<Database> databases = new HashSet<>();
+
+  public Set<LogFile> logfiles = new HashSet<>();
+
+  public Host(String name, boolean isFirewallEnabled) {
+    super(name);
+    assetClassName = "Host";
+    AttackStep.allAttackSteps.remove(connect);
+    connect = new Connect(name);
+    AttackStep.allAttackSteps.remove(authenticate);
+    authenticate = new Authenticate(name);
+    AttackStep.allAttackSteps.remove(guessPassword);
+    guessPassword = new GuessPassword(name);
+    AttackStep.allAttackSteps.remove(guessedPassword);
+    guessedPassword = new GuessedPassword(name);
+    AttackStep.allAttackSteps.remove(access);
+    access = new Access(name);
+    if (firewall != null) {
+      AttackStep.allAttackSteps.remove(firewall.disable);
+    }
+    Defense.allDefenses.remove(firewall);
+    firewall = new Firewall(name, isFirewallEnabled);
+  }
 
   public Host(String name) {
     super(name);
@@ -37,6 +65,15 @@ public class Host extends Asset {
     guessedPassword = new GuessedPassword(name);
     AttackStep.allAttackSteps.remove(access);
     access = new Access(name);
+    if (firewall != null) {
+      AttackStep.allAttackSteps.remove(firewall.disable);
+    }
+    Defense.allDefenses.remove(firewall);
+    firewall = new Firewall(name, false);
+  }
+
+  public Host(boolean isFirewallEnabled) {
+    this("Anonymous", isFirewallEnabled);
   }
 
   public Host() {
@@ -53,12 +90,26 @@ public class Host extends Asset {
     passwords.host = this;
   }
 
+  public void addDatabases(Database databases) {
+    this.databases.add(databases);
+    databases.host.add(this);
+  }
+
+  public void addLogfiles(LogFile logfiles) {
+    this.logfiles.add(logfiles);
+    logfiles.host.add(this);
+  }
+
   @Override
   public String getAssociatedAssetClassName(String field) {
     if (field.equals("networks")) {
       return Network.class.getName();
     } else if (field.equals("passwords")) {
       return Password.class.getName();
+    } else if (field.equals("databases")) {
+      return Database.class.getName();
+    } else if (field.equals("logfiles")) {
+      return LogFile.class.getName();
     }
     return "";
   }
@@ -70,6 +121,10 @@ public class Host extends Asset {
       assets.addAll(networks);
     } else if (field.equals("passwords")) {
       assets.addAll(passwords);
+    } else if (field.equals("databases")) {
+      assets.addAll(databases);
+    } else if (field.equals("logfiles")) {
+      assets.addAll(logfiles);
     }
     return assets;
   }
@@ -79,6 +134,8 @@ public class Host extends Asset {
     Set<Asset> assets = new HashSet<>();
     assets.addAll(networks);
     assets.addAll(passwords);
+    assets.addAll(databases);
+    assets.addAll(logfiles);
     return assets;
   }
 
@@ -96,6 +153,9 @@ public class Host extends Asset {
       if (_cacheChildrenConnect == null) {
         _cacheChildrenConnect = new HashSet<>();
         _cacheChildrenConnect.add(access);
+        for (Password _0 : passwords) {
+          _cacheChildrenConnect.add(_0.read);
+        }
       }
       for (AttackStep attackStep : _cacheChildrenConnect) {
         attackStep.updateTtc(this, ttc, attackSteps);
@@ -107,9 +167,10 @@ public class Host extends Asset {
       super.setExpectedParents();
       if (_cacheParentConnect == null) {
         _cacheParentConnect = new HashSet<>();
-        for (Network _0 : networks) {
-          _cacheParentConnect.add(_0.access);
+        for (Network _1 : networks) {
+          _cacheParentConnect.add(_1.access);
         }
+        _cacheParentConnect.add(firewall.disable);
       }
       for (AttackStep attackStep : _cacheParentConnect) {
         addExpectedParent(attackStep);
@@ -248,6 +309,42 @@ public class Host extends Asset {
     @Override
     public double localTtc() {
       return ttcHashMap.get("Host.access");
+    }
+  }
+
+  public class Firewall extends Defense {
+    public Firewall(String name) {
+      this(name, false);
+    }
+
+    public Firewall(String name, Boolean isEnabled) {
+      super(name);
+      defaultValue = isEnabled;
+      disable = new Disable(name);
+    }
+
+    public class Disable extends AttackStepMin {
+      private Set<AttackStep> _cacheChildrenFirewall;
+
+      public Disable(String name) {
+        super(name);
+      }
+
+      @Override
+      public void updateChildren(Set<AttackStep> attackSteps) {
+        if (_cacheChildrenFirewall == null) {
+          _cacheChildrenFirewall = new HashSet<>();
+          _cacheChildrenFirewall.add(connect);
+        }
+        for (AttackStep attackStep : _cacheChildrenFirewall) {
+          attackStep.updateTtc(this, ttc, attackSteps);
+        }
+      }
+
+      @Override
+      public String fullName() {
+        return "Host.firewall";
+      }
     }
   }
 }

@@ -24,7 +24,8 @@ category System {
 
   asset Host {
     | connect
-      -> access
+      -> access,
+         passwords.read
     | authenticate
       -> access
     | guessPassword
@@ -41,26 +42,27 @@ category System {
       -> phish
     | phish [Exponential(0.1)]
       -> passwords.obtain
-    | socialEngineering
-      -> secrets.obtain
   }
 
   asset Password {
+    & read
+      -> obtain
     | obtain
       -> host.authenticate
-  }
-
-  asset Secret {
-    | obtain
-      -> host.authenticate
-  }
+    # encrypted
+      -> read
+    | quantum
+      -> encrypted
+    }
 
   asset Database {
     | query
       -> dataAccess
-    | dataAccess [Exponential(0.7)]
-      -> extractSensitiveData
-    & host.access
+    | dataAccess [Exponential(0.1)]
+      -> extractPassword
+    | extractPassword
+      -> host.passwords.obtain
+    & access
     # encrypted
       -> dataAccess
   }
@@ -69,8 +71,8 @@ category System {
     | readLog
       -> discoverCredentials
     | discoverCredentials [Exponential(0.03)]
-      -> passwords.obtain
-    & host.access
+      -> host.passwords.obtain
+    & access
     # logAccessControl
       -> readLog
   }
@@ -80,7 +82,6 @@ associations {
   Network [networks] * <-- NetworkAccess --> * [hosts] Host
   Host [host] 1 <-- Credentials --> * [passwords] Password
   User [user] 1 <-- Credentials --> * [passwords] Password
-  User [user] * <-- AccessSecrets --> * [secrets] Secret
   Host [host] * <-- Stores --> * [databases] Database
   Host [host] * <-- Logs --> * [logfiles] LogFile
 }

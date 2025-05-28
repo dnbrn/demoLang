@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.dnbrn.demoLang.test.TestError" time="0.081" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.dnbrn.demoLang.test.TestError" time="0.111" tests="10" errors="0" skipped="0" failures="0">
   <properties>
     <property name="gopherProxySet" value="false"/>
     <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SE"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter10850474661342704302.jar /Users/danielbraun/mal/dnbrn/demoLang/target/surefire 2025-05-27T15-34-48_853-jvmRun1 surefire11136150531805310745tmp surefire_09687534730935770486tmp"/>
+    <property name="sun.java.command" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter15016894928685377128.jar /Users/danielbraun/mal/dnbrn/demoLang/target/surefire 2025-05-28T20-50-09_411-jvmRun1 surefire14521475273163620026tmp surefire_02608163816764562213tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/test-classes:/Users/danielbraun/mal/dnbrn/demoLang/target/classes:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter/5.8.2/junit-jupiter-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/danielbraun/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/danielbraun/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.8.2/junit-jupiter-params-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.8.2/junit-jupiter-engine-5.8.2.jar:/Users/danielbraun/.m2/repository/org/junit/platform/junit-platform-engine/1.8.2/junit-platform-engine-1.8.2.jar:/Users/danielbraun/.m2/repository/org/reflections/reflections/0.10.2/reflections-0.10.2.jar:/Users/danielbraun/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/Users/danielbraun/.m2/repository/org/slf4j/slf4j-api/1.7.32/slf4j-api-1.7.32.jar:/Users/danielbraun/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar:/Users/danielbraun/.m2/repository/junit/junit/4.10/junit-4.10.jar:/Users/danielbraun/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar:/Users/danielbraun/.m2/repository/net/bytebuddy/byte-buddy/1.12.20/byte-buddy-1.12.20.jar:/Users/danielbraun/.m2/repository/org/javassist/javassist/3.29.2-GA/javassist-3.29.2-GA.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter10850474661342704302.jar"/>
+    <property name="surefire.real.class.path" value="/Users/danielbraun/mal/dnbrn/demoLang/target/surefire/surefirebooter15016894928685377128.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="11.0.26+4"/>
     <property name="user.name" value="danielbraun"/>
@@ -59,19 +59,51 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="java.class.version" value="55.0"/>
   </properties>
-  <testcase name="testGuessPassword2" classname="org.dnbrn.demoLang.test.TestError" time="0.054">
+  <testcase name="testGuessPcPasswordEncrypted" classname="org.dnbrn.demoLang.test.TestError" time="0.071">
     <system-out><![CDATA[Building LanguageModel...
 Building LanguageModel...
-❌️Test crashed.
-
++ pc.access was reached in 50.0 days, as expected.
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="testGuessPassword" classname="org.dnbrn.demoLang.test.TestError" time="0.01">
-    <system-out><![CDATA[+ server.access was reached in 50.0 days, as expected.
+  <testcase name="testGetPcPasswordNotEncryptedQuantum" classname="org.dnbrn.demoLang.test.TestError" time="0.003">
+    <system-out><![CDATA[+ pc.access was reached in 50.0 days, as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testOnlyServerDefence" classname="org.dnbrn.demoLang.test.TestError" time="0.003">
+    <system-out><![CDATA[+ server.access was not reached, as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testGetPasswordNotEncryptedQuantumCapabilities" classname="org.dnbrn.demoLang.test.TestError" time="0.002">
+    <system-out><![CDATA[+ server.access was reached instantaneously as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testAllDefences" classname="org.dnbrn.demoLang.test.TestError" time="0.002">
+    <system-out><![CDATA[+ server.access was not reached, as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testFullyCompromiseDatabase" classname="org.dnbrn.demoLang.test.TestError" time="0.002">
+    <system-out><![CDATA[+ database.extractPassword was reached in 10.0 days, as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testDatabaseNotEncrypted" classname="org.dnbrn.demoLang.test.TestError" time="0.001">
+    <system-out><![CDATA[+ server.access was reached in 10.0 days, as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testSimulateCrash" classname="org.dnbrn.demoLang.test.TestError" time="0.001">
+    <system-out><![CDATA[❌️Test crashed.
+
+]]></system-out>
+  </testcase>
+  <testcase name="testGuessPasswordNotEncrypted" classname="org.dnbrn.demoLang.test.TestError" time="0.002">
+    <system-out><![CDATA[+ server.access was reached instantaneously as expected.
+]]></system-out>
+  </testcase>
+  <testcase name="testNothing" classname="org.dnbrn.demoLang.test.TestError" time="0.001">
+    <system-out><![CDATA[+ server.access was reached instantaneously as expected.
 ]]></system-out>
   </testcase>
 </testsuite>
