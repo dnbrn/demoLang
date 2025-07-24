@@ -1,6 +1,6 @@
-# from exampleLang to demoLang
+# From exampleLang to demoLang
 
-TODO
+This is an updated extended version of [exampleLang](https://github.com/mal-lang/exampleLang) used for demonstration purposed in my Master's thesis.
 
 # exampleLang
 
