@@ -1,6 +1,9 @@
 # From exampleLang to demoLang
 
 This is an updated extended version of [exampleLang](https://github.com/mal-lang/exampleLang) used for demonstration purposes in my Master's thesis.
+The following two files are where the main changes were made:
+* src/main/mal/demoLang.mal
+* src/test/java/org/dnbrn/demoLang/test/TestError.java
 
 # exampleLang
 
