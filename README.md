@@ -1,6 +1,6 @@
 # From exampleLang to demoLang
 
-This is an updated extended version of [exampleLang](https://github.com/mal-lang/exampleLang) used for demonstration purposed in my Master's thesis.
+This is an updated extended version of [exampleLang](https://github.com/mal-lang/exampleLang) used for demonstration purposes in my Master's thesis.
 
 # exampleLang
 
